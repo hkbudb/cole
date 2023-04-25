@@ -1,0 +1,218 @@
+{
+  "contractName": "Nothing",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "nothing",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"nothing\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/donothing.sol\":\"Nothing\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/donothing.sol\":{\"keccak256\":\"0x80b58364eb122f73c2e098e70eca92e1f1f789ddf50d345ade6054d5fbaa0379\",\"urls\":[\"bzz-raw://b79df3f3150441bb9c61bfc57cea8c42489105e8817e0facc3fe1350951cbabf\",\"dweb:/ipfs/Qmcpg8ZPnFj9T2Gv7kqRryetAhqWrxD8Xvfb3j2w2rJLFy\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50606c80601d6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063448f30a314602d575b600080fd5b60336035565b005b56fea265627a7a723158206219358bc511bd09cf8d3c7d5550884de0dd0853e51bae69689a51d870ae908c64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063448f30a314602d575b600080fd5b60336035565b005b56fea265627a7a723158206219358bc511bd09cf8d3c7d5550884de0dd0853e51bae69689a51d870ae908c64736f6c63430005100032",
+  "sourceMap": "33:53:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:53:1;;;;;;;",
+  "deployedSourceMap": "33:53:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:53:1;;;;;;;;;;;;;;;;;;;56:28;;;:::i;:::-;;;:::o",
+  "source": "pragma solidity >=0.4.0 <0.7.0;\n\ncontract Nothing {\n    function nothing() public {}\n}\n",
+  "sourcePath": "/home/cezhang/cole/eth-execution-engine/contracts/contracts/donothing.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/donothing.sol",
+    "exportedSymbols": {
+      "Nothing": [
+        162
+      ]
+    },
+    "id": 163,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 157,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 162,
+        "linearizedBaseContracts": [
+          162
+        ],
+        "name": "Nothing",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 160,
+              "nodeType": "Block",
+              "src": "82:2:1",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 161,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "nothing",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 158,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "72:2:1"
+            },
+            "returnParameters": {
+              "id": 159,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "82:0:1"
+            },
+            "scope": 162,
+            "src": "56:28:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 163,
+        "src": "33:53:1"
+      }
+    ],
+    "src": "0:87:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/donothing.sol",
+      "exportedSymbols": {
+        "Nothing": [
+          162
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".0",
+            "<",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 157,
+        "name": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            162
+          ],
+          "name": "Nothing",
+          "scope": 163
+        },
+        "children": [
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "nothing",
+              "scope": 162,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 158,
+                "name": "ParameterList",
+                "src": "72:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 159,
+                "name": "ParameterList",
+                "src": "82:0:1"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 160,
+                "name": "Block",
+                "src": "82:2:1"
+              }
+            ],
+            "id": 161,
+            "name": "FunctionDefinition",
+            "src": "56:28:1"
+          }
+        ],
+        "id": 162,
+        "name": "ContractDefinition",
+        "src": "33:53:1"
+      }
+    ],
+    "id": 163,
+    "name": "SourceUnit",
+    "src": "0:87:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2023-03-15T14:43:34.419Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

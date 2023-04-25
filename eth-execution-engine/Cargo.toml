@@ -1,0 +1,30 @@
+[package]
+name = "eth-execution-engine"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = { version = "1.0", default-features = false }
+bitflags = "1.2"
+bincode = "1.3"
+derive_more = "0.99"
+evm = { version = "0.33" }
+ethabi = "15.0"
+hex = "0.4"
+rlp = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha3 = "0.10"
+once_cell = "1.7"
+rand = "0.7"
+regex = "1.4"
+kvdb-rocksdb = "0.17.0"
+patricia-trie = { version = "0.1.0", path = "../patricia-trie" }
+non-learn-cmi = { version = "0.1.0", path = "../non-learn-cmi" }
+lipp = { version = "0.1.0", path = "../lipp" }
+cole-index = { version = "0.1.0", path = "../cole-index" }
+cole-star = { version = "0.1.0", path = "../cole-star" }
+utils = { version = "0.1.0", path = "../utils" }
+primitive-types = { version = "0.10.1", features = ["serde"] }

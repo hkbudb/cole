@@ -1,0 +1,16 @@
+[workspace]
+
+members = [
+    "utils",
+    "merkle-btree-storage",
+    "cole-index",
+    "cole-star",
+    "patricia-trie",
+    "lipp",
+    "growable-bitmap",
+    "non-persist-trie",
+    "non-learn-cmi",
+    "eth-execution-engine",
+    "growable-bloom-filters",
+    "exp",
+]
