@@ -8,7 +8,12 @@
 
 # Install Dependencies
 - Install [Rust](https://rustup.rs).
-- Run `sudo apt-get update` and `sudo apt install make clang pkg-config libssl-dev`
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+- Run `sudo apt update` and `sudo apt install make clang pkg-config libssl-dev libsqlite3-dev`
 
 # Build
 - Build the latency testing binary `cargo build --bin latency`
