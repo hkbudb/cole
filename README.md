@@ -19,5 +19,18 @@ source ~/.bashrc
 - Build the latency testing binary `cargo build --bin latency`
 - Build the provenance testing binary `cargo build --bin prov`
 
+# Prepare YCSB Dataset
+- Download the latest release of YCSB to the HOME directory:
+```
+cd ~
+curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
+tar xfvz ycsb-0.17.0.tar.gz
+```
+- Use script `build_ycsb.sh` to generate `readonly`, `writeonly`, and `readwriteeven` datasets
+```
+./exp/build_ycsb.sh
+```
+
+Three `txt` files will be generated: `./exp/readonly/readonly-data.txt`, `./exp/writeonly/writeonly-data.txt`, and `./exp/readwriteeven/readwriteeven-data.txt`
 # Run Script
 `python3 exp/run.py`
