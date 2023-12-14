@@ -20,17 +20,29 @@ source ~/.bashrc
 - Build the provenance testing binary `cargo build --bin prov`
 
 # Prepare YCSB Dataset
-- Download the latest release of YCSB to the HOME directory:
+* Download the latest release of YCSB to the HOME directory:
 ```
 cd ~
 curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
 tar xfvz ycsb-0.17.0.tar.gz
 ```
-- Use script `build_ycsb.sh` to generate `readonly`, `writeonly`, and `readwriteeven` datasets
+* Use script `build_ycsb.sh` to generate `readonly`, `writeonly`, and `readwriteeven` datasets
 ```
 ./exp/build_ycsb.sh
 ```
 
-Three `txt` files will be generated: `./exp/readonly/readonly-data.txt`, `./exp/writeonly/writeonly-data.txt`, and `./exp/readwriteeven/readwriteeven-data.txt`
+* After the build process finishes, three `txt` files will be generate:
+    * `./exp/readonly/readonly-data.txt`
+    * `./exp/writeonly/writeonly-data.txt`
+    * `./exp/readwriteeven/readwriteeven-data.txt`
+
+* Next, prepare the dataset for provenance queries:
+```
+./exp/prov/build_prov_ycsb.sh
+```
+
+* After the build process finishes, a file named `./exp/prov/prov-data.txt` will be generated.
+
 # Run Script
-`python3 exp/run.py`
+
+* Use functions like `test_overall_kvstore()`, `test_overall_smallbank()`, and `test_prov()` in `exp/run.py` to evaluate the workload of `KVStore`, `SmallBank`, and provenance query performance.

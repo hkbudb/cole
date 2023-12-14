@@ -174,6 +174,23 @@ def test_mht_fanout():
             write_storage_json(cur_workload, cur_index, cur_scale, fanout, size_ratio_default)
             os.system("rm -rf ./%s/default_db" % cur_workload)
 
+def test_prov():
+    cur_workload = "prov"
+    if not os.path.exists(cur_workload):
+        os.mkdir(cur_workload)
+    cur_scale = 10000000
+    test_index = ["mpt", "cole", "cole_star"]
+    size_ratio_default = 4
+    fanout_default = 4
+    for cur_index in test_index:
+        print("test prov, index: %s" % (cur_index))
+        params_file_path = prov_json_gen(workload=cur_workload, index_name=cur_index, scale=cur_scale, tx_in_block=default_tx_in_block, size_ratio=size_ratio_default, epsilon=23, mht_fanout=fanout_default, fix_window_size=False)
+        os.system("cargo run --release --bin prov %s" % (params_file_path))
+        # compute storage
+        write_storage_json(cur_workload, cur_index, cur_scale, fanout_default, size_ratio_default)
+        os.system("rm -rf ./%s/default_db" % cur_workload)
+
 if __name__ == "__main__":
     test_overall_kvstore()
     test_overall_smallbank()
+    test_prov()
