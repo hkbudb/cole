@@ -6,7 +6,7 @@
 - `non-learn-cmi` is the column-based Merkle index (CMI) that uses non-learned index
 - `exp` is the evaluation backend of all systems including the throughput and the provenance queries
 
-# Install Dependencies
+## Install Dependencies
 - Install [Rust](https://rustup.rs).
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -15,11 +15,11 @@ source ~/.bashrc
 ```
 - Run `sudo apt update` and `sudo apt install make clang pkg-config libssl-dev libsqlite3-dev`
 
-# Build
+## Build
 - Build the latency testing binary `cargo build --bin latency`
 - Build the provenance testing binary `cargo build --bin prov`
 
-# Prepare YCSB Dataset
+## Prepare YCSB Dataset
 * Download the latest release of YCSB to the HOME directory:
 ```
 cd ~
@@ -43,6 +43,6 @@ tar xfvz ycsb-0.17.0.tar.gz
 
 * After the build process finishes, a file named `./exp/prov/prov-data.txt` will be generated.
 
-# Run Script
+## Run Script
 
 * Use functions like `test_overall_kvstore()`, `test_overall_smallbank()`, and `test_prov()` in `exp/run.py` to evaluate the workload of `KVStore`, `SmallBank`, and provenance query performance.
