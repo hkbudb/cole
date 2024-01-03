@@ -1,7 +1,7 @@
 import json
 import os
 import subprocess
-indexes = ["mpt", "cole", "cole_star", "non_learn_cmi"]
+indexes = ["mpt", "cole", "cole_star", "non_learn_cmi"] # note that 'lipp' can be added to 'indexes' list, but may lead to extremely long execution time
 scale = [1000, 10000, 100000, 1000000, 10000000]
 default_tx_in_block = 100
 
@@ -191,6 +191,6 @@ def test_prov():
         os.system("rm -rf ./%s/default_db" % cur_workload)
 
 if __name__ == "__main__":
-    test_overall_kvstore()
-    test_overall_smallbank()
-    test_prov()
+    # test_overall_smallbank()
+    # test_overall_kvstore()
+    # test_prov()
