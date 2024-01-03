@@ -1,0 +1,12 @@
+/target
+/Cargo.lock
+*.dat
+*/cole_storage
+*/persist_trie
+*/default_db
+*/*.txt
+*/*/*.txt
+*/*.json
+*/*/*/*.json
+*/*/*.json
+*/*.log

@@ -20,7 +20,7 @@ sha3 = "0.10"
 once_cell = "1.7"
 rand = "0.7"
 regex = "1.4"
-kvdb-rocksdb = "0.17.0"
+kvdb-rocksdb = "0.19.0"
 patricia-trie = { version = "0.1.0", path = "../patricia-trie" }
 non-learn-cmi = { version = "0.1.0", path = "../non-learn-cmi" }
 lipp = { version = "0.1.0", path = "../lipp" }

@@ -16,8 +16,8 @@ source ~/.bashrc
 - Run `sudo apt update` and `sudo apt install make clang pkg-config libssl-dev libsqlite3-dev`
 
 ## Build
-- Build the latency testing binary `cargo build --bin latency`
-- Build the provenance testing binary `cargo build --bin prov`
+- Build the latency testing binary `cargo build --release --bin latency`
+- Build the provenance testing binary `cargo build --release --bin prov`
 
 ## Prepare YCSB Dataset
 * Download the latest release of YCSB to the HOME directory:
@@ -26,9 +26,15 @@ cd ~
 curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
 tar xfvz ycsb-0.17.0.tar.gz
 ```
+* Install Java
+```
+sudo apt install default-jdk
+sudo apt install default-jre
+```
 * Use script `build_ycsb.sh` to generate `readonly`, `writeonly`, and `readwriteeven` datasets
 ```
-./exp/build_ycsb.sh
+cd ~/cole-public/exp
+./build_ycsb.sh
 ```
 
 * After the build process finishes, three `txt` files will be generate:
@@ -38,7 +44,8 @@ tar xfvz ycsb-0.17.0.tar.gz
 
 * Next, prepare the dataset for provenance queries:
 ```
-./exp/prov/build_prov_ycsb.sh
+cd ~/cole-public/exp/
+./build_prov_ycsb.sh
 ```
 
 * After the build process finishes, a file named `./exp/prov/prov-data.txt` will be generated.
@@ -46,3 +53,10 @@ tar xfvz ycsb-0.17.0.tar.gz
 ## Run Script
 
 * Use functions like `test_overall_kvstore()`, `test_overall_smallbank()`, and `test_prov()` in `exp/run.py` to evaluate the workload of `KVStore`, `SmallBank`, and provenance query performance.
+
+## Check the Result
+
+The result `json` files can be found in each workload directory (e.g., smallbank, writeonly, prov)
+
+* `*-storage.json` stores the storage information
+* `*-ts.json` stores the block timestamp information including start timestamp, end timestamp, and block latency, which can be used to compute the system throughput and latency
