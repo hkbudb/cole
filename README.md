@@ -52,7 +52,7 @@ cd ~/cole-public/exp/
 ./build_prov_ycsb.sh
 ```
 
-* After the build process finishes, a file named `./exp/prov/prov-data.txt` will be generated.
+* After the build process finishes, a file named `cole-public/exp/prov/prov-data.txt` will be generated.
 
 ## Run Script
 ```
