@@ -1,5 +1,6 @@
 import json
 import os
+from os.path import exists
 import subprocess
 indexes = ["mpt", "cole", "cole_star", "non_learn_cmi"] # note that 'lipp' can be added to 'indexes' list, but may lead to extremely long execution time
 scale = [1000, 10000, 100000, 1000000, 10000000]
@@ -41,15 +42,20 @@ def prov_json_gen(workload, index_name, scale, tx_in_block, size_ratio, epsilon,
     return params_file_path
 
 def compute_general_size(path, others):
-    proc = subprocess.Popen("du -b -s %s/%s" % (path, others), stdout=subprocess.PIPE, shell=True, encoding="utf8")
-    (out, _) = proc.communicate()
-    out = str(out)
-    lines = out.split("\n")[:-1]
-    size = 0
-    for line in lines:
-        s = line.split("\t")[0]
-        size += int(s)
-    return size
+    file_exists = exists("%s/%s" % (path, others))
+    print(file_exists)
+    if file_exists is True:
+        proc = subprocess.Popen("du -b -s %s/%s" % (path, others), stdout=subprocess.PIPE, shell=True, encoding="utf8")
+        (out, _) = proc.communicate()
+        out = str(out)
+        lines = out.split("\n")[:-1]
+        size = 0
+        for line in lines:
+            s = line.split("\t")[0]
+            size += int(s)
+        return size
+    else:
+        return 0
 
 def compute_size_breakdown(path):
     # compute mht size
