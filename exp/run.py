@@ -43,7 +43,6 @@ def prov_json_gen(workload, index_name, scale, tx_in_block, size_ratio, epsilon,
 
 def compute_general_size(path, others):
     file_exists = exists("%s/%s" % (path, others))
-    print(file_exists)
     if file_exists is True:
         proc = subprocess.Popen("du -b -s %s/%s" % (path, others), stdout=subprocess.PIPE, shell=True, encoding="utf8")
         (out, _) = proc.communicate()
