@@ -13,11 +13,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
-- Run `sudo apt update` and `sudo apt install make clang pkg-config libssl-dev libsqlite3-dev`
+- Run `sudo apt update` and `sudo apt install make clang pkg-config libssl-dev libsqlite3-dev llvm m4 build-essential`
 
 ## Build
-- Build the latency testing binary `cargo build --release --bin latency`
-- Build the provenance testing binary `cargo build --release --bin prov`
+Build the latency testing binary and provenance testing binary
+```
+cd cole-public
+cargo build --release --bin latency
+cargo build --release --bin prov
+```
 
 ## Prepare YCSB Dataset
 * Download the latest release of YCSB to the HOME directory:
@@ -51,6 +55,10 @@ cd ~/cole-public/exp/
 * After the build process finishes, a file named `./exp/prov/prov-data.txt` will be generated.
 
 ## Run Script
+```
+cd ~/cole-public/exp/
+python3 run.py
+```
 
 * Use functions like `test_overall_kvstore()`, `test_overall_smallbank()`, and `test_prov()` in `cole-public/exp/run.py` to evaluate the workload of `KVStore`, `SmallBank`, and provenance query performance.
 * You may select different scales `scale = [1000, 10000, 100000, 1000000, 10000000]` or different indexes `indexes = ["mpt", "cole", "cole_star", "non_learn_cmi"]`
