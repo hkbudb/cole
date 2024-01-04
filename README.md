@@ -38,9 +38,9 @@ cd ~/cole-public/exp
 ```
 
 * After the build process finishes, three `txt` files will be generate:
-    * `./exp/readonly/readonly-data.txt`
-    * `./exp/writeonly/writeonly-data.txt`
-    * `./exp/readwriteeven/readwriteeven-data.txt`
+    * `cole-public/exp/readonly/readonly-data.txt`
+    * `cole-public/exp/writeonly/writeonly-data.txt`
+    * `cole-public/exp/readwriteeven/readwriteeven-data.txt`
 
 * Next, prepare the dataset for provenance queries:
 ```
@@ -52,7 +52,8 @@ cd ~/cole-public/exp/
 
 ## Run Script
 
-* Use functions like `test_overall_kvstore()`, `test_overall_smallbank()`, and `test_prov()` in `exp/run.py` to evaluate the workload of `KVStore`, `SmallBank`, and provenance query performance.
+* Use functions like `test_overall_kvstore()`, `test_overall_smallbank()`, and `test_prov()` in `cole-public/exp/run.py` to evaluate the workload of `KVStore`, `SmallBank`, and provenance query performance.
+* You may select different scales `scale = [1000, 10000, 100000, 1000000, 10000000]` or different indexes `indexes = ["mpt", "cole", "cole_star", "non_learn_cmi"]`
 
 ## Check the Result
 
