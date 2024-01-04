@@ -13,18 +13,25 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
-- Run `sudo apt update` and `sudo apt -y install make clang pkg-config libssl-dev libsqlite3-dev llvm m4 build-essential`
+- Run `sudo apt update` and `sudo apt -y install git make clang pkg-config libssl-dev libsqlite3-dev llvm m4 build-essential`
+
+## Download Repository to $HOME directory
+```
+cd ~
+git clone https://github.com/cezhang52111/cole-public.git
+```
 
 ## Build
-Build the latency testing binary and provenance testing binary
+* Build the latency testing binary and provenance testing binary
 ```
-cd cole-public
+cd ~/cole-public
 cargo build --release --bin latency
 cargo build --release --bin prov
 ```
+* If the program is built successfully, you should find two executable programs `latency` and `prov` in the directory `~/cole-public/target/release/`
 
 ## Prepare YCSB Dataset
-* Download the latest release of YCSB to the HOME directory:
+* Download the latest release of YCSB to the $HOME directory:
 ```
 cd ~
 curl -O --location https://github.com/brianfrankcooper/YCSB/releases/download/0.17.0/ycsb-0.17.0.tar.gz
