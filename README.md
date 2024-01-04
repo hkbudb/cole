@@ -13,7 +13,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
-- Run `sudo apt update` and `sudo apt install make clang pkg-config libssl-dev libsqlite3-dev llvm m4 build-essential`
+- Run `sudo apt update` and `sudo apt -y install make clang pkg-config libssl-dev libsqlite3-dev llvm m4 build-essential`
 
 ## Build
 Build the latency testing binary and provenance testing binary
@@ -32,8 +32,8 @@ tar xfvz ycsb-0.17.0.tar.gz
 ```
 * Install Java
 ```
-sudo apt install default-jdk
-sudo apt install default-jre
+sudo apt -y install default-jdk
+sudo apt -y install default-jre
 ```
 * Use script `build_ycsb.sh` to generate `readonly`, `writeonly`, and `readwriteeven` datasets
 ```
