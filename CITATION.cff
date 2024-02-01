@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Zhang
+    given-names: Ce
+    affiliation: "Hong Kong Baptist University"
+  - family-names: Xu
+    given-names: Cheng
+    affiliation: "Hong Kong Baptist University"
+  - family-names: Hu
+    given-names: Haibo
+    affiliation: "Hong Kong Polytechnic University"
+  - family-names: Xu
+    given-names: Jianliang
+    affiliation: "Hong Kong Baptist University"
+title: "COLE: A Column-based Learned Storage for Blockchain Systems"
+url: https://github.com/hkbudb/cole
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Zhang
+      given-names: Ce
+      affiliation: "Hong Kong Baptist University"
+    - family-names: Xu
+      given-names: Cheng
+      affiliation: "Hong Kong Baptist University"
+    - family-names: Hu
+      given-names: Haibo
+      affiliation: "Hong Kong Polytechnic University"
+    - family-names: Xu
+      given-names: Jianliang
+      affiliation: "Hong Kong Baptist University"
+  title: "COLE: A Column-based Learned Storage for Blockchain Systems"
+  collection-title: Proceedings of the 22nd USENIX Conference on File and Storage Technologies
+  year: 2024
+  month: 2
