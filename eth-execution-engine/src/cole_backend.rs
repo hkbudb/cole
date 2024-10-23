@@ -1,9 +1,9 @@
 use super::common::{nonce::Nonce, code::Code, write_trait::BackendWriteTrait};
 use utils::{types::{Address, StateKey, StateValue, AddrKey, CompoundKeyValue, CompoundKey}, config::Configs};
 use super::tx_executor::Backend;
-use std::{collections::BTreeMap};
+use std::{cell::UnsafeCell, collections::BTreeMap};
 use anyhow::Result;
-use cole_index::{Cole};
+use cole_index::Cole;
 
 pub struct ColeBackend<'a> {
     pub nonce_map: BTreeMap<Address, Nonce>,
@@ -23,8 +23,8 @@ impl<'a> ColeBackend<'a> {
     pub fn get_mut_total_tree(&self) -> &'a mut Cole<'a> {
         unsafe {
             let const_ptr = &self.states as *const Cole;
-            let mut_ptr = const_ptr as *mut Cole;
-            &mut *mut_ptr
+            let mut_ptr = UnsafeCell::new(const_ptr as *mut Cole);
+            &mut **mut_ptr.get()
         }
     }
 }

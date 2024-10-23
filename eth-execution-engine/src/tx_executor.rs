@@ -1,5 +1,5 @@
 use super::common::{code::Code, nonce::Nonce, write_trait::BackendWriteTrait};
-use utils::{types::{StateKey, StateValue, AddrKey, Address}};
+use utils::types::{StateKey, StateValue, AddrKey, Address};
 use super::common::rw_set::{TxReadData, TxWriteData};
 use super::common::tx_req::TxRequest;
 use anyhow::{Result, Error, Context as _, ensure};
